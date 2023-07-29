@@ -34,6 +34,7 @@ describe('the page should have a title, form and idea cards', () => {
     cy.intercept('GET', 'http://localhost:3001/ideas', {
       statusCode: 404
     })
+    
     cy.visit('http://localhost:3000/')
      .get('.idea-container').find('.card').should('have.length', 0)
   })

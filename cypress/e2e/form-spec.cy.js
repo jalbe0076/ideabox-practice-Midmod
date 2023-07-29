@@ -11,7 +11,9 @@ describe('have a form that submits new ideas', () => {
     cy.wait('@items').then(() => {
       cy.get('.idea-container').find('.card').should('have.length', 3)
         .get('[name="title"]').type('Title')
+        .get('[name="title"]').should('have.attr', 'value', 'Title')
         .get('form > [name="description"]').type('My cool description goes here')
+        .get('form > [name="description"]').should('have.attr', 'value', 'My cool description goes here')
         .get('button').click()
         .get('.idea-container').find('.card').should('have.length', 4)
         .get('.card').last().contains('h2', 'Title')
