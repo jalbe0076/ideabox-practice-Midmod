@@ -12,7 +12,7 @@
   max-width: 30%;
 }
 
-main {
+.idea-container, .form-container {
   display: flex;
   justify-content: center;
 }
