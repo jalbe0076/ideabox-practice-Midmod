@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { postItem } from "../../apiCalls"
 
 const Form = ({addItem}) => {
   const [title, setTitle] = useState('')
@@ -8,7 +9,7 @@ const Form = ({addItem}) => {
     e.preventDefault();
 
     const newItem = {
-      id: Date.now(),
+      // id: Date.now(),
       title,
       description
     }

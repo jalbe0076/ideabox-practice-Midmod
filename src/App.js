@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { getItems } from './apiCalls';
+import { getItems, postItem } from './apiCalls';
 import { useState, useEffect } from 'react';
 import IdeaList from './components/IdeaList/IdeaList';
 import Form from './components/Form/Form';
@@ -21,7 +21,14 @@ function App() {
   }, [])
 
   const addItem = (newItem) => {
-    setItems(prevItems => [... prevItems, newItem])
+    (async() => {
+      try {
+        const postIt = await postItem(newItem)
+        setItems(prevItems => [... prevItems, postIt])
+      } catch (error) {
+        console.log(error.message)
+      }
+    })()
   }
 
   return (
