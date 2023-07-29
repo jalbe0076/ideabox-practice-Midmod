@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { getItems } from './apiCalls';
 import { useState, useEffect } from 'react';
+import IdeaList from './components/IdeaList/IdeaList';
 
 function App() {
   const [items, setItems] = useState([])
@@ -23,7 +24,9 @@ function App() {
       <header className="App-header">
         <h1>IDEA-BOX</h1>
       </header>
-      <main></main>
+      <main>
+        <IdeaList items={items} />
+      </main>
     </div>
   );
 }
