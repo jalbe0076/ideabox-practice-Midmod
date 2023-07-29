@@ -19,7 +19,7 @@ const Form = ({addItem}) => {
   }
 
   return (
-    <form name="item" >
+    <form className="item-form" name="item" >
       <input name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter Title" />
       <input name="description" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter Description" />
       <button onClick={(e) => handleClick(e)}>SUBMIT!</button>
